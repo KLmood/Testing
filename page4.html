@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Million's world</title>
+<meta charset="UTF-8">
+<link href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWNlbnF1bDlmbGNkamZvOHEyNWsydmNraHlhNmtveWEzbWl3cWRiMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KZwaIIz48b8w9Az3L5/giphy.gif" rel="stylesheet">
+<style>
+  /* --- BASE STYLES --- */
+  body {
+    background-color: #f0f0f0; /* Color behind the game screen */
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* --- 1. TOP NAVIGATION BAR --- */
+  .top-nav {
+    background-color: #ffcc00; /* Yellow bar */
+    border: 4px solid #000;
+    padding: 15px;
+    width: 100%;
+    max-width: 600px; /* Matches game screen width */
+    margin-bottom: 20px; /* Space between nav and game */
+    text-align: center;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #000;
+    margin: 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .nav-link:hover {
+    color: #ff69b4; /* Pink on hover */
+    text-decoration: underline;
+  }
+
+  /* --- 2. THE GAME SCREEN (The Container) --- */
+  .game-screen {
+    position: relative; /* IMPORTANT: This allows items inside to be placed freely */
+    background-color: #5acbf9;
+    background-image: 
+      radial-gradient(#ffffff 20%, transparent 20%),
+      radial-gradient(#ffffff 20%, transparent 20%);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+    border: 8px solid #333;
+    border-radius: 15px;
+    width: 600px; /* Fixed width helps positioning */
+    height: 500px; /* Fixed height helps positioning */
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+    overflow: hidden; /* Cuts off stickers if they go too far out */
+  }
+
+  /* --- 3. CENTER CONTENT (Your Photo) --- */
+  .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Keeps this dead center */
+    text-align: center;
+    z-index: 10; /* Keeps this above background stickers */
+  }
+
+  .title-text {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 3px 3px 0 #000;
+    margin-bottom: 15px;
+  }
+
+  .player-frame {
+    width: 140px;
+    height: 170px;
+    background: #fff;
+    border: 4px solid #000;
+    padding: 5px;
+    margin: 0 auto 15px auto;
+  }
+
+  .player-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* --- 4. BUTTONS / LINKS --- */
+  .button-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .pixel-btn {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none; /* Removes underline from links */
+    border: 4px solid #000;
+    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .btn-page1 { background-color: #ff69b4; } /* Pink */
+  .btn-page2 { background-color: #4169e1; } /* Blue */
+
+  .pixel-btn:hover { transform: scale(1.05); }
+
+  /* --- 5. THE FREE-FLOATING STICKERS --- */
+  /* This class lets you put images anywhere */
+  .sticker {
+    position: absolute; /* Allows manual movement */
+    z-index: 5; /* Behind the main text but in front of background */
+    width: 60px; /* Default size */
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="top-nav">
+    <a href="index.html" class="nav-link">🏠 HOME</a> | 
+    <a href="page1.html" class="nav-link">PAGE 1</a> | 
+    <a href="page2.html" class="nav-link">PAGE 2</a>
+  </div>
+
+  <div class="game-screen">
+
+    <img class="sticker" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHhkejYweWN4NmVpdWs2bGR1c3NkdXJvbXQ3ZDJ6cmdrZmZsMGo3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/QM4LYZpO6XAPe/giphy.gif">
+
+    <img class="sticker" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmxyaDZhM285cGtwdm13d213MHl6N2dsbXZ5cWgxdHIxZmltbDl6bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKGz9PtFqfXQy0yre/giphy.gif" 
+         style="bottom: 20px; right: 20px; width: 60px;">
+
+    <img class="sticker" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2Vwc205NzQyYzF2YmQ3NnM3YWd1bnllZnozbHlnYmVlam5hZDBxeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ei4K2LHS1SX11NuSjX/giphy.gif" 
+         style="top: 100px; right: 80px; width: 50px;">
+         
+    <div class="center-content">
+      <div class="title-text">CHOOSE<br>PLAYER</div>
+      
+      <div class="player-frame">
+        <img src="download (2).jpg" alt="An alien">
+      </div>
+
+      <div class="button-row">
+        <a href="index.html" class="pixel-btn btn-page1">Page 1</a>
+        <a href="page2.html" class="pixel-btn btn-page2">Page 2</a>
+        <a href="page2.html" class="pixel-btn btn-page2">Page 3</a>
+      </div>
+      
+    </div>
+
+    <div style="position:absolute; bottom:10px; width:100%; text-align:center; font-size:8px; color:#333;">
+
+    </div>
+
+  </div>
+
+</body>
+</html>
